@@ -57,7 +57,29 @@ body{
     border-top: 10px solid #e6513b;
 }
 
-.bs-icon{
-    
+.icon_bs{
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
 }
+
+.icon_bs .Arrow{
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.pagination_slide{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pagination_slide .swiper_pagination{
+    font-size: 20px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+
+
 
