@@ -1,0 +1,72 @@
+.card_post{
+    padding: 30px;
+}
+
+
+.card_post{
+    border: 2px solid rgba(0, 0, 0, 0,2);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    max-width: 400px !important;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+.card_post .card img{
+    height: 150px;
+    object-fit: fill;
+    object-position: center;
+}
+
+
+.card_post .card .body_card{
+    padding: 8px;
+}
+
+
+.card_post .card .body_card .title_card{
+    font-weight: 600;
+    color: #444;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.card_post .card .body_card .text_card{
+    font-weight: 400;
+    color: #666;
+    font-size: 14px;
+    text-align: justify;
+}
+
+
+.group_btn{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    width: 100%;
+    margin-top: 8px;
+}
+
+
+.custom_btn{
+    text-decoration: none;
+    color:#fff;
+    background-color: #e6513b;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    transition: 0.5s ;
+}
+
+
+.custom_btn:nth-child(2){
+    background-color: #00b704;
+}
+
+.custom_btn:hover{
+    color: #fff;
+    background-color: #333;
+    transition: 0.5s;
+}

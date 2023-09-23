@@ -1,3 +1,7 @@
+import './Content.css';
+
+
+
 export const ContentSlider = () => {
     return (
         <div className="card_post">
