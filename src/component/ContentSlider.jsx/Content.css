@@ -1,3 +1,16 @@
+:root{
+    --text3 :rgb(151, 151, 151);
+    --text4: hsla(0, 0%, 34%, 1);
+    --white: hsla(360, 0%, 91%, 1);
+    --back: hsla(31, 86%, 57%, 1);
+    --back1:hsla(8, 77%, 57%, 1);
+    --back2 :hsla(121, 100%, 36%, 1);
+    --back3 : rgb(79, 76, 76);
+   
+}
+
+
+
 .card_post{
     padding: 30px;
 }
@@ -26,14 +39,14 @@
 
 .card_post .card .body_card .title_card{
     font-weight: 600;
-    color: #444;
+    color: var(--text2);
     font-size: 18px;
     text-align: justify;
 }
 
 .card_post .card .body_card .text_card{
     font-weight: 400;
-    color: #666;
+    color: var(--text1);
     font-size: 14px;
     text-align: justify;
 }
@@ -52,8 +65,8 @@
 
 .custom_btn{
     text-decoration: none;
-    color:#fff;
-    background-color: #e6513b;
+    color:var(--white);
+    background-color: var(--back1);
     border-radius: 10px;
     padding: 0.5rem 1rem;
     font-size: 16px;
@@ -62,11 +75,11 @@
 
 
 .custom_btn:nth-child(2){
-    background-color: #00b704;
+    background-color: var(--back2);
 }
 
 .custom_btn:hover{
-    color: #fff;
-    background-color: #333;
+    color: var(--white);
+    background-color: var(--back3);
     transition: 0.5s;
 }
