@@ -27,37 +27,37 @@ const Products = [
     {
         id: 1,
         productName: "hat 1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
         image: img_1
     },
     {
         id: 2,
         productName: "hat 2",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
         image: img_2
     },
     {
         id: 3,
         productName: "hat 3",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
         image: img_3
     },
     {
         id: 4,
         productName: "hat 4",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. !",
         image: img_4
     },
     {
         id: 5,
         productName: "hat 5",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
         image: img_5
     },
     {
         id: 6,
         productName: "hat 6",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
         image: img_6
     }
 ]
@@ -88,9 +88,20 @@ export const Slider = () => {
 
                 <div className="contain_post">
                     <Swiper>
-                        <SwiperSlide>
-                            <ContentSlider />
-                        </SwiperSlide>
+                        {
+                            Products.map((item) => {
+                                return (
+                                    <SwiperSlide key={item.id}>
+                                        <ContentSlider
+                                        key={item.id}
+                                        image={item.image}
+                                        title={item.productName}
+                                        description={item.description} 
+                                        />
+                                    </SwiperSlide>
+                                )
+                            })
+                        }
                     </Swiper>
 
                 </div>
