@@ -1,9 +1,66 @@
 import React from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper';
+
+
+
 import './Slider.css';
 import { ContentSlider } from "../ContentSlider.jsx/ContentSlider";
 
 
+import img_1 from '../images/36W-black.jpg';
+import img_2 from '../images/36W-green.jpg';
+import img_3 from '../images/36W-red.jpg';
+import img_4 from '../images/36W-white.jpg';
+import img_5 from '../images/46V-sand.jpg';
+import img_6 from '../images/48V-grey-white.jpg';
+
+
+
+
+const Products = [
+    {
+        id: 1,
+        productName: "hat 1",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        image: img_1
+    },
+    {
+        id: 2,
+        productName: "hat 2",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        image: img_2
+    },
+    {
+        id: 3,
+        productName: "hat 3",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        image: img_3
+    },
+    {
+        id: 4,
+        productName: "hat 4",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        image: img_4
+    },
+    {
+        id: 5,
+        productName: "hat 5",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        image: img_5
+    },
+    {
+        id: 6,
+        productName: "hat 6",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tenetur amet laborum, odit sapiente eligendi molestiae ea ullam repellendus reprehenderit ipsa dolorem expedita at ex libero! Culpa saepe sit fugit labore dolorum autem harum aliquid laudantium, qui alias voluptas sapiente!",
+        image: img_6
+    }
+]
 
 export const Slider = () => {
     return (
@@ -22,15 +79,20 @@ export const Slider = () => {
                         <div className="pagination_slide">
                             <p className="swiper_pagination">1/6</p>
                             <div className="icon_bs">
-                                <BsArrowLeft className="Arrow"/>
-                                <BsArrowRight className="Arrow"/>
+                                <BsArrowLeft className="Arrow" />
+                                <BsArrowRight className="Arrow" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="contain_post">
-                    <ContentSlider/>
+                    <Swiper>
+                        <SwiperSlide>
+                            <ContentSlider />
+                        </SwiperSlide>
+                    </Swiper>
+
                 </div>
             </div>
         </div>
