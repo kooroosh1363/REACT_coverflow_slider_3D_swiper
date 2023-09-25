@@ -8,6 +8,6 @@ function App() {
       <Slider />
     </>
   );
-}
+};
 
 export default App;
