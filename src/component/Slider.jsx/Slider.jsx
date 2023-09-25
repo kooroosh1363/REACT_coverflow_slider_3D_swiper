@@ -1,11 +1,12 @@
 import React , {useRef, useState} from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
-
+import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper';
+
 
 
 
@@ -103,10 +104,10 @@ export const Slider = () => {
                         <h2 className="heading_second">only for you </h2>
 
                         <div className="pagination_slide">
-                            <p className="swiper_pagination">1/6</p>
+                            <p className="swiper_paginations"></p>
                             <div className="icon_bs">
-                                <BsArrowLeft className={`Arrow ${isFirst ? 'disabled' : ''}`} onClick={handleNext} />
-                                <BsArrowRight className={`Arrow ${isLast ? 'disabled' : ''}`}  onClick={handlePrev}/>
+                                <BsArrowLeft className={`Arrow ${isFirst ? 'disabled' : ''}`} onClick={handlePrev} />
+                                <BsArrowRight className={`Arrow ${isLast ? 'disabled' : ''}`}  onClick={handleNext}/>
                             </div>
                         </div>
                     </div>
@@ -116,10 +117,15 @@ export const Slider = () => {
                     <Swiper
                     slidesPerView={3}
                     spaceBetween={0}
-                    navigation={false}
                     className={"mySwiper"}
                     ref={SlideRef}
                     onSlideChange={onSlideChange}
+                    pagination={{
+                        el: '.swiper_paginations',
+                        type:'fraction',
+                    }}
+                    navigation={false}
+                    modules={[Navigation, Pagination]}
                     >
                         {
                             Products.map((item) => {
