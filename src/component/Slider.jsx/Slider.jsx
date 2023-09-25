@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useRef, useState} from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 
@@ -63,6 +63,32 @@ const Products = [
 ]
 
 export const Slider = () => {
+
+    const [slideBegOrNot, handleSlideByState] = useState({
+        isFirst:true,
+        isLast:false,
+    });
+
+    const SlideRef = useRef();
+
+    const handleNext = () => {
+        SlideRef.current.swiper.slideNext();
+    }
+
+    const handlePrev = () => {
+        SlideRef.current.swiper.slidePrev();
+    }
+
+    const onSlideChange =swiper =>{
+        handleSlideByState({
+            isFirst : swiper.isBeginning,
+            isLast : swiper.isEnd,
+        })
+    }
+
+
+    const {isLast, isFirst} = slideBegOrNot;
+
     return (
         <div className="container">
             <h1 className="heading">post carousel using react swiper js</h1>
@@ -79,8 +105,8 @@ export const Slider = () => {
                         <div className="pagination_slide">
                             <p className="swiper_pagination">1/6</p>
                             <div className="icon_bs">
-                                <BsArrowLeft className="Arrow" />
-                                <BsArrowRight className="Arrow" />
+                                <BsArrowLeft className={`Arrow ${isFirst ? 'disabled' : ''}`} onClick={handleNext} />
+                                <BsArrowRight className={`Arrow ${isLast ? 'disabled' : ''}`}  onClick={handlePrev}/>
                             </div>
                         </div>
                     </div>
@@ -92,6 +118,8 @@ export const Slider = () => {
                     spaceBetween={0}
                     navigation={false}
                     className={"mySwiper"}
+                    ref={SlideRef}
+                    onSlideChange={onSlideChange}
                     >
                         {
                             Products.map((item) => {

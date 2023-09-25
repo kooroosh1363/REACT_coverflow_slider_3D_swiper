@@ -84,3 +84,8 @@
     background-color: var(--back3);
     transition: 0.5s;
 }
+
+.disabled{
+    cursor:default;
+    opacity: 0.5;
+}
