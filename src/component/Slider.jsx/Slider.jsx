@@ -87,7 +87,12 @@ export const Slider = () => {
                 </div>
 
                 <div className="contain_post">
-                    <Swiper>
+                    <Swiper
+                    slidesPerView={3}
+                    spaceBetween={0}
+                    navigation={false}
+                    className={"mySwiper"}
+                    >
                         {
                             Products.map((item) => {
                                 return (
