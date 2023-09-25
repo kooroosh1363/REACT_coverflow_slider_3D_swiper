@@ -115,7 +115,7 @@ export const Slider = () => {
 
                 <div className="contain_post">
                     <Swiper
-                    slidesPerView={3}
+                    slidesPerView={1}
                     spaceBetween={0}
                     className={"mySwiper"}
                     ref={SlideRef}
@@ -126,6 +126,26 @@ export const Slider = () => {
                     }}
                     navigation={false}
                     modules={[Navigation, Pagination]}
+                    breakpoints={{
+                        0: {
+                            slidesPerView:1,
+                        },
+                        390: {
+                            slidesPerView:1.5,
+                        },
+                        502: {
+                            slidesPerView:2,
+                        },
+                        802: {
+                            slidesPerView:2.5,
+                        },
+                        992: {
+                            slidesPerView:3,
+                        },
+                        1200: {
+                            slidesPerView:4,
+                        },
+                    }}
                     >
                         {
                             Products.map((item) => {
